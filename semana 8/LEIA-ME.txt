@@ -1,0 +1,65 @@
+BANCO DE DADOS - SEMANA 08 - DADOS PARA MACHINE LEARNING
+
+ORDEM OBRIGATÓRIA
+
+1) Abra esta pasta no VS Code.
+2) Abra o terminal na mesma pasta.
+3) Instale:
+   pip install -r requirements.txt
+
+4) Configure a conexão no PowerShell:
+   $env:DATABASE_URL="SUA_STRING_DE_CONEXAO"
+
+   IMPORTANTE: não compartilhe essa string e não cole no caderno.
+
+5) Teste antes de começar:
+   python 00_testar_ambiente.py
+
+   Só avance quando aparecer:
+   AMBIENTE OK
+
+6) Exercícios:
+   python 01_auditoria.py
+   python 02_encoding_status.py
+   python 03_standard_scaler.py
+   python 04_feature_engineering.py
+   python 05_pipeline_completo.py
+
+O QUE CADA SCRIPT RESPONDE
+
+01_auditoria.py
+- Exercício 1
+- shape, tipos, nulos, duplicatas, cidades, outliers
+
+02_encoding_status.py
+- Exercício 2
+- usa STATUS da tabela PEDIDOS
+- Label Encoding + One-Hot Encoding
+
+03_standard_scaler.py
+- Exercício 3
+- extrai features sozinho
+- split antes do scaler
+- fit apenas no treino
+
+04_feature_engineering.py
+- Exercício 4
+- taxa_cancelamento
+- cliente_ativo
+- faixa_gasto
+- imprime distribuições
+
+05_pipeline_completo.py
+- Exercício 5
+- extração -> auditoria -> limpeza -> features -> encoding
+  -> split -> scaler -> Parquet
+- gera:
+  X_train.parquet
+  X_test.parquet
+  y_train.parquet
+  y_test.parquet
+  scaler_v1.pkl
+  le_cidade_v1.pkl
+
+Se um exercício falhar, não pule para o próximo. Copie a mensagem de erro
+e identifique qual etapa não concluiu.
